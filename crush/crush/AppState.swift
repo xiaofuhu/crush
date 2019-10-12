@@ -51,11 +51,32 @@ final class AppState: ObservableObject {
         db.child("user").child(user.id).child("match_list").child(id).setValue(1)
         db.child("user").child(id).observeSingleEvent(of: .value, with: { snapshot in
             var tmp = User(id: id, name: "", description: "", imageUrl: "")
+            var i:Int = self.liked.startIndex;
+            while (i < self.liked.endIndex) {
+                if (self.liked[i].id == id) {
+                    self.liked.remove(at: i)
+                    break
+                }
+                i = i + 1
+            }
             let value = snapshot.value as? NSDictionary
             tmp.name = value?["name"] as? String ?? ""
             tmp.description = value?["description"] as? String ?? ""
             tmp.imageUrl = value?["image"] as? String ?? ""
             self.matched.append(tmp)
+        })
+    }
+    
+    func like(id: String) {
+        db.child("user").child(id).observeSingleEvent(of: .value, with: { snapshot in
+            var i:Int = self.nearby.startIndex;
+            while (i < self.nearby.endIndex) {
+                if (self.nearby[i].id == id) {
+                    self.nearby.remove(at: i)
+                    break
+                }
+                i = i + 1
+            }
         })
     }
 }

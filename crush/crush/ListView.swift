@@ -36,6 +36,49 @@ struct ListView: View {
     }
 }
 
+struct NearbyListView: View {
+    var userData: [User]
+    var title: String! = "People"
+    @ObservedObject var state: AppState
+    
+    var body: some View {
+        NavigationView {
+            List(userData) { user in
+                HStack() {
+                    Image(uiImage: user.image)
+                        .resizable()
+                        .frame(width: 80, height: 80, alignment: .leading)
+                    VStack {
+                        Text(user.name).font(.title)
+                    }
+                    Spacer()
+                    NavigationLink(destination: NearbyProfileView(user: user, state: self.state)) {
+                        Spacer()
+                        Text("View")
+                    }
+                    Spacer()
+                }
+            }.navigationBarTitle(Text(title))
+        }
+    }
+}
+
+struct NearbyProfileView: View {
+    var user: User
+    @ObservedObject var state: AppState
+    
+    var body: some View {
+        VStack {
+            ProfileView(user: user)
+            Spacer()
+            Button(action: { self.state.like(id: self.user.id) }) {
+                Text("Like").fontWeight(.bold).font(.system(size: 20)).lineSpacing(20)
+            }
+            Spacer()
+        }
+    }
+}
+
 struct OtherProfileView: View {
     var user: User
     @ObservedObject var state: AppState

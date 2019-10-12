@@ -44,7 +44,7 @@ struct MainView: View {
                     Image(systemName: "heart.fill")
                     Text("Matched")
                 }
-                ListView(userData: state.nearby, title: "Nearby", state: state)
+                NearbyListView(userData: state.nearby, title: "Nearby", state: state)
                 .tabItem {
                     Image(systemName: "globe")
                     Text("Nearby")
