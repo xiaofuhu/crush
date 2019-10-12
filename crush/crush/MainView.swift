@@ -13,16 +13,28 @@ struct MainView: View {
 
     var body: some View {
         TabView {
-            SnapshotView(state: state).tabItem {
-                Image(systemName: "2.square.fill")
-                Text("Second")
-            }
             ProfileView(user: state.user).tabItem {
                 Image(systemName: "1.square.fill")
                 Text("First")
             }
-            ListView(userData: state.liked, title: "Liked by").tabItem {
-                Image(systemName: "star.fill")
+            SnapshotView(state: state).tabItem {
+                Image(systemName: "2.square.fill")
+                Text("Second")
+            }
+            TabView {
+                ListView(userData: state.liked, title: "Liked by", state: state)
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Liked by")
+                }
+                MatchListView(userData: state.matched, title: "Matched", state: state)
+                .tabItem {
+                    Image(systemName: "heart.fill")
+                    Text("Matched")
+                }
+            }.tabItem {
+                Image(systemName: "3.square.fill")
+                Text("Third")
             }
         }
     }

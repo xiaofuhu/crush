@@ -14,7 +14,8 @@ import GeoFire
 final class AppState: ObservableObject {
     @Published var manager = CLLocationManager()
     @Published var nearby: [User] = []
-    @Published var liked: [User] = []
+    @Published var liked: [User] = [User(id: "3", name: "Laura", description: "I love math", imageUrl: "https://i.imgur.com/s0dmtAE.jpg")]
+    @Published var matched: [User] = []
     @Published var user = User(id: "0", name: "", description: "", imageUrl: "")
     fileprivate var db = Database.database().reference()
     fileprivate var gdb = GeoFire(firebaseRef: Database.database().reference())
@@ -39,6 +40,19 @@ final class AppState: ObservableObject {
             user.description = value?["description"] as? String ?? ""
             user.imageUrl = value?["image"] as? String ?? ""
             closure(user)
+        })
+    }
+    
+    func like_back(id: String) {
+        db.child("user").child(id).child("match_list").child(user.id).setValue(1)
+        db.child("user").child(user.id).child("match_list").child(id).setValue(1)
+        db.child("user").child(id).observeSingleEvent(of: .value, with: { snapshot in
+            var tmp = User(id: id, name: "", description: "", imageUrl: "")
+            let value = snapshot.value as? NSDictionary
+            tmp.name = value?["name"] as? String ?? ""
+            tmp.description = value?["description"] as? String ?? ""
+            tmp.imageUrl = value?["image"] as? String ?? ""
+            self.matched.append(tmp)
         })
     }
 }
