@@ -10,8 +10,9 @@ import UIKit
 import SwiftUI
 import Firebase
 import FirebaseDatabase
+import CoreLocation
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, CLLocationManagerDelegate  {
 
     var state = AppState()
     var window: UIWindow?
@@ -25,6 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         // Initialize state object
+        state.manager.delegate = self
+        state.manager.startUpdatingLocation()
         state.getUser(id: "1") { user in
             self.state.user = user
             
@@ -66,6 +69,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func locationManager(_ manager: CLLocationManager,
+            didUpdateLocations locations: [CLLocation]) {
+        state.sendLocation()
+    }
 }
 
