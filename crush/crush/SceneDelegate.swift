@@ -8,10 +8,14 @@
 
 import UIKit
 import SwiftUI
+import Firebase
+import FirebaseDatabase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var foo: UIWindow?
+    var ref: DatabaseReference!
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -20,15 +24,50 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        ref = Database.database().reference()
+        var user = User(id: 1, name: "AS", description: "DF", imageUrl: "foo")
+        ref.child("user").child("1").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let name = value?["name"] as? String ?? ""
+            let description = value?["description"] as? String ?? ""
+            let image = value?["image"] as? String ?? ""
+            user.id = 1
+            user.name = name
+            user.description = description
+            user.imageUrl = image
+            print("DEBUG: ", user.id, user.name, user.description, user.image)
+            let contentView = ContentView()
+            let mainView = MainView(user: user)
 
-        // Use a UIHostingController as window root view controller.
-        if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
-            self.window = window
-            window.makeKeyAndVisible()
-        }
+            // Use a UIHostingController as window root view controller.
+            if let windowScene = scene as? UIWindowScene {
+                let window = UIWindow(windowScene: windowScene)
+                window.rootViewController = UIHostingController(rootView: contentView)
+                self.window = window
+                window.makeKeyAndVisible()
+                
+                let foo = UIWindow(windowScene: windowScene)
+                foo.rootViewController = UIHostingController(rootView: mainView)
+                self.foo = foo
+                foo.makeKeyAndVisible()
+            }
+//            print("descr ", description ?? "")
+        })
+//        let contentView = ContentView()
+//        let mainView = MainView(user: user)
+//
+//        // Use a UIHostingController as window root view controller.
+//        if let windowScene = scene as? UIWindowScene {
+//            let window = UIWindow(windowScene: windowScene)
+//            window.rootViewController = UIHostingController(rootView: contentView)
+//            self.window = window
+//            window.makeKeyAndVisible()
+//
+//            let foo = UIWindow(windowScene: windowScene)
+//            foo.rootViewController = UIHostingController(rootView: mainView)
+//            self.foo = foo
+//            foo.makeKeyAndVisible()
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
