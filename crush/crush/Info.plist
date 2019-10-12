@@ -39,6 +39,10 @@
 	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>See and show yourself to nearby users</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>See and show yourself to nearby users</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

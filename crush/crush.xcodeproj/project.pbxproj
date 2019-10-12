@@ -12,13 +12,14 @@
 		797749160EA9FFFCFF1B80C1 /* Pods_crushTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB077B40EB91C6419F98109E /* Pods_crushTests.framework */; };
 		80EA226F235179E500A366A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA226E235179E500A366A1 /* AppDelegate.swift */; };
 		80EA2271235179E500A366A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2270235179E500A366A1 /* SceneDelegate.swift */; };
-		80EA2273235179E500A366A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2272235179E500A366A1 /* ContentView.swift */; };
+		80EA2273235179E500A366A1 /* SnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2272235179E500A366A1 /* SnapshotView.swift */; };
 		80EA2275235179E600A366A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80EA2274235179E600A366A1 /* Assets.xcassets */; };
 		80EA2278235179E600A366A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80EA2277235179E600A366A1 /* Preview Assets.xcassets */; };
 		80EA227B235179E600A366A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80EA2279235179E600A366A1 /* LaunchScreen.storyboard */; };
 		80EA2286235179E600A366A1 /* crushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2285235179E600A366A1 /* crushTests.swift */; };
 		80EA2291235179E600A366A1 /* crushUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2290235179E600A366A1 /* crushUITests.swift */; };
 		80EA22A123517B8000A366A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80EA22A023517B8000A366A1 /* GoogleService-Info.plist */; };
+		F230A87E23518D4D0072389B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230A87D23518D4C0072389B /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,7 @@
 		80EA226B235179E500A366A1 /* crush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EA226E235179E500A366A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80EA2270235179E500A366A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80EA2272235179E500A366A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		80EA2272235179E500A366A1 /* SnapshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotView.swift; sourceTree = "<group>"; };
 		80EA2274235179E600A366A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80EA2277235179E600A366A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80EA227A235179E600A366A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		9A4CA9B19CEA1D56C8F78A6E /* Pods-crush-crushUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crush-crushUITests.release.xcconfig"; path = "Target Support Files/Pods-crush-crushUITests/Pods-crush-crushUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A0450AE7848C87431E539A17 /* Pods-crushTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crushTests.debug.xcconfig"; path = "Target Support Files/Pods-crushTests/Pods-crushTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA929A9BB2F349ACEFA39CB2 /* Pods-crushTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crushTests.release.xcconfig"; path = "Target Support Files/Pods-crushTests/Pods-crushTests.release.xcconfig"; sourceTree = "<group>"; };
+		F230A87D23518D4C0072389B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		FB077B40EB91C6419F98109E /* Pods_crushTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crushTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -141,7 +143,8 @@
 		80EA226D235179E500A366A1 /* crush */ = {
 			isa = PBXGroup;
 			children = (
-				80EA2272235179E500A366A1 /* ContentView.swift */,
+				80EA2272235179E500A366A1 /* SnapshotView.swift */,
+				F230A87D23518D4C0072389B /* MapView.swift */,
 				80EA226E235179E500A366A1 /* AppDelegate.swift */,
 				80EA2270235179E500A366A1 /* SceneDelegate.swift */,
 				80EA22A023517B8000A366A1 /* GoogleService-Info.plist */,
@@ -420,8 +423,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				80EA226F235179E500A366A1 /* AppDelegate.swift in Sources */,
+				F230A87E23518D4D0072389B /* MapView.swift in Sources */,
 				80EA2271235179E500A366A1 /* SceneDelegate.swift in Sources */,
-				80EA2273235179E500A366A1 /* ContentView.swift in Sources */,
+				80EA2273235179E500A366A1 /* SnapshotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
