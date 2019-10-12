@@ -25,15 +25,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         // Initialize state object
-        state.db = Database.database().reference()
-        state.gdb = GeoFire(firebaseRef: state.db)
-        state.getUser("1") { user in
-            state.user = user
+        state.getUser(id: "1") { user in
+            self.state.user = user
             
             // Create the SwiftUI view that provides the window contents.
             if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)
-                wnidow.rootViewController = UIHostingController(rootView: MainView(state))
+                window.rootViewController = UIHostingController(rootView: MainView(state: self.state))
                 self.window = window
                 window.makeKeyAndVisible()
             }

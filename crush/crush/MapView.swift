@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 
 struct MapView: UIViewRepresentable {
-    @EnvironmentObject var state: AppState
+    var manager: CLLocationManager
     
     func makeUIView(context: Context) -> MKMapView {
         let map = MKMapView(frame: .zero)
@@ -31,7 +31,7 @@ struct MapView: UIViewRepresentable {
         }
         
         func mapView(_ view: MKMapView, didUpdate userLocation: MKUserLocation) {
-            let location = state.manager.location.coordinate
+            let location = control.manager.location!.coordinate
             let span = MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002)
             let region = MKCoordinateRegion(center: location, span: span)
             view.setRegion(region, animated: true)
@@ -50,13 +50,13 @@ struct MapView: UIViewRepresentable {
     
     func updateUIView(_ view: MKMapView, context: Context) {
         view.showsUserLocation = true
-        state.manager.requestAlwaysAuthorization()
-        state.manager.requestWhenInUseAuthorization()
+        manager.requestAlwaysAuthorization()
+        manager.requestWhenInUseAuthorization()
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(manager: CLLocationManager())
     }
 }

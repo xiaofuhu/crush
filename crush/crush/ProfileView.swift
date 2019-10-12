@@ -28,6 +28,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(user: )
+        let user = User(id: "0", name: "Foo", description: "An interesting person", imageUrl: "https://i.imgur.com/RMJtEhQ.jpg")
+        return ProfileView(user: user)
     }
 }

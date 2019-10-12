@@ -9,39 +9,35 @@
 /* Begin PBXBuildFile section */
 		59416AF9A9BA6EAE9A360577 /* Pods_crush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66293030AFA85140C91E6559 /* Pods_crush.framework */; };
 		5D6036F0834E0045E8E6F443 /* Pods_crush_crushUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B51642468FB15954E4BA5EC /* Pods_crush_crushUITests.framework */; };
-		797749160EA9FFFCFF1B80C1 /* Pods_crushTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB077B40EB91C6419F98109E /* Pods_crushTests.framework */; };
 		80EA226F235179E500A366A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA226E235179E500A366A1 /* AppDelegate.swift */; };
 		80EA2271235179E500A366A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2270235179E500A366A1 /* SceneDelegate.swift */; };
 		80EA2273235179E500A366A1 /* SnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2272235179E500A366A1 /* SnapshotView.swift */; };
 		80EA2275235179E600A366A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80EA2274235179E600A366A1 /* Assets.xcassets */; };
 		80EA2278235179E600A366A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80EA2277235179E600A366A1 /* Preview Assets.xcassets */; };
 		80EA227B235179E600A366A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80EA2279235179E600A366A1 /* LaunchScreen.storyboard */; };
-		80EA2286235179E600A366A1 /* crushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2285235179E600A366A1 /* crushTests.swift */; };
 		80EA2291235179E600A366A1 /* crushUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2290235179E600A366A1 /* crushUITests.swift */; };
 		80EA22A123517B8000A366A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80EA22A023517B8000A366A1 /* GoogleService-Info.plist */; };
 		80EA726223518F7400BADD27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726123518F7400BADD27 /* MainView.swift */; };
-		80EA726323518F7400BADD27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726123518F7400BADD27 /* MainView.swift */; };
 		80EA726423518F7400BADD27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726123518F7400BADD27 /* MainView.swift */; };
 		80EA726C2351A34600BADD27 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726B2351A34600BADD27 /* ProfileView.swift */; };
-		80EA726D2351A34600BADD27 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726B2351A34600BADD27 /* ProfileView.swift */; };
 		80EA726E2351A34600BADD27 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726B2351A34600BADD27 /* ProfileView.swift */; };
 		80EA72702351EEDD00BADD27 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726F2351EEDD00BADD27 /* User.swift */; };
-		80EA72712351EEDD00BADD27 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726F2351EEDD00BADD27 /* User.swift */; };
 		80EA72722351EEDD00BADD27 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726F2351EEDD00BADD27 /* User.swift */; };
 		F230A87E23518D4D0072389B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230A87D23518D4C0072389B /* MapView.swift */; };
 		F230A8822351E3570072389B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230A8812351E3570072389B /* ListView.swift */; };
 		F2C6ED5F23522B4300C29477 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6ED5E23522B4300C29477 /* AppState.swift */; };
+		F2C6ED6723525A6E00C29477 /* crushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6ED6623525A6E00C29477 /* crushTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		80EA2282235179E600A366A1 /* PBXContainerItemProxy */ = {
+		80EA228D235179E600A366A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80EA2263235179E500A366A1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 80EA226A235179E500A366A1;
 			remoteInfo = crush;
 		};
-		80EA228D235179E600A366A1 /* PBXContainerItemProxy */ = {
+		F2C6ED6923525A6E00C29477 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 80EA2263235179E500A366A1 /* Project object */;
 			proxyType = 1;
@@ -64,7 +60,6 @@
 		80EA2277235179E600A366A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80EA227A235179E600A366A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80EA227C235179E600A366A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		80EA2281235179E600A366A1 /* crushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80EA2285235179E600A366A1 /* crushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crushTests.swift; sourceTree = "<group>"; };
 		80EA2287235179E600A366A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80EA228C235179E600A366A1 /* crushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crushUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +75,9 @@
 		F230A87D23518D4C0072389B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		F230A8812351E3570072389B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		F2C6ED5E23522B4300C29477 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F2C6ED6423525A6E00C29477 /* crushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2C6ED6623525A6E00C29477 /* crushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crushTests.swift; sourceTree = "<group>"; };
+		F2C6ED6823525A6E00C29477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB077B40EB91C6419F98109E /* Pods_crushTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crushTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,19 +90,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80EA227E235179E600A366A1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				797749160EA9FFFCFF1B80C1 /* Pods_crushTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		80EA2289235179E600A366A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5D6036F0834E0045E8E6F443 /* Pods_crush_crushUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2C6ED6123525A6E00C29477 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +137,7 @@
 				80EA226D235179E500A366A1 /* crush */,
 				80EA2284235179E600A366A1 /* crushTests */,
 				80EA228F235179E600A366A1 /* crushUITests */,
+				F2C6ED6523525A6E00C29477 /* crushTests */,
 				80EA226C235179E500A366A1 /* Products */,
 				12CB0DB9F1C3E56A435D19D4 /* Pods */,
 				269DC3CC761A425F62C96485 /* Frameworks */,
@@ -150,8 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				80EA226B235179E500A366A1 /* crush.app */,
-				80EA2281235179E600A366A1 /* crushTests.xctest */,
 				80EA228C235179E600A366A1 /* crushUITests.xctest */,
+				F2C6ED6423525A6E00C29477 /* crushTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,6 +201,15 @@
 			path = crushUITests;
 			sourceTree = "<group>";
 		};
+		F2C6ED6523525A6E00C29477 /* crushTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6ED6623525A6E00C29477 /* crushTests.swift */,
+				F2C6ED6823525A6E00C29477 /* Info.plist */,
+			);
+			path = crushTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,25 +232,6 @@
 			productReference = 80EA226B235179E500A366A1 /* crush.app */;
 			productType = "com.apple.product-type.application";
 		};
-		80EA2280235179E600A366A1 /* crushTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 80EA2298235179E600A366A1 /* Build configuration list for PBXNativeTarget "crushTests" */;
-			buildPhases = (
-				B66A4264493C1CAB17D4B423 /* [CP] Check Pods Manifest.lock */,
-				80EA227D235179E600A366A1 /* Sources */,
-				80EA227E235179E600A366A1 /* Frameworks */,
-				80EA227F235179E600A366A1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				80EA2283235179E600A366A1 /* PBXTargetDependency */,
-			);
-			name = crushTests;
-			productName = crushTests;
-			productReference = 80EA2281235179E600A366A1 /* crushTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		80EA228B235179E600A366A1 /* crushUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80EA229B235179E600A366A1 /* Build configuration list for PBXNativeTarget "crushUITests" */;
@@ -264,25 +252,43 @@
 			productReference = 80EA228C235179E600A366A1 /* crushUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F2C6ED6323525A6E00C29477 /* crushTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2C6ED6B23525A6F00C29477 /* Build configuration list for PBXNativeTarget "crushTests" */;
+			buildPhases = (
+				F2C6ED6023525A6E00C29477 /* Sources */,
+				F2C6ED6123525A6E00C29477 /* Frameworks */,
+				F2C6ED6223525A6E00C29477 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2C6ED6A23525A6E00C29477 /* PBXTargetDependency */,
+			);
+			name = crushTests;
+			productName = crushTests;
+			productReference = F2C6ED6423525A6E00C29477 /* crushTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		80EA2263235179E500A366A1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Crush Inc.";
 				TargetAttributes = {
 					80EA226A235179E500A366A1 = {
 						CreatedOnToolsVersion = 11.0;
 					};
-					80EA2280235179E600A366A1 = {
+					80EA228B235179E600A366A1 = {
 						CreatedOnToolsVersion = 11.0;
 						TestTargetID = 80EA226A235179E500A366A1;
 					};
-					80EA228B235179E600A366A1 = {
-						CreatedOnToolsVersion = 11.0;
+					F2C6ED6323525A6E00C29477 = {
+						CreatedOnToolsVersion = 11.1;
 						TestTargetID = 80EA226A235179E500A366A1;
 					};
 				};
@@ -301,8 +307,8 @@
 			projectRoot = "";
 			targets = (
 				80EA226A235179E500A366A1 /* crush */,
-				80EA2280235179E600A366A1 /* crushTests */,
 				80EA228B235179E600A366A1 /* crushUITests */,
+				F2C6ED6323525A6E00C29477 /* crushTests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,14 +325,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80EA227F235179E600A366A1 /* Resources */ = {
+		80EA228A235179E600A366A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80EA228A235179E600A366A1 /* Resources */ = {
+		F2C6ED6223525A6E00C29477 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,28 +403,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-crush-crushUITests/Pods-crush-crushUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B66A4264493C1CAB17D4B423 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-crushTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D038F79E2E026CCC71CECF6F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -455,17 +439,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80EA227D235179E600A366A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80EA72712351EEDD00BADD27 /* User.swift in Sources */,
-				80EA726323518F7400BADD27 /* MainView.swift in Sources */,
-				80EA726D2351A34600BADD27 /* ProfileView.swift in Sources */,
-				80EA2286235179E600A366A1 /* crushTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		80EA2288235179E600A366A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -477,18 +450,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F2C6ED6023525A6E00C29477 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2C6ED6723525A6E00C29477 /* crushTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		80EA2283235179E600A366A1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 80EA226A235179E500A366A1 /* crush */;
-			targetProxy = 80EA2282235179E600A366A1 /* PBXContainerItemProxy */;
-		};
 		80EA228E235179E600A366A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 80EA226A235179E500A366A1 /* crush */;
 			targetProxy = 80EA228D235179E600A366A1 /* PBXContainerItemProxy */;
+		};
+		F2C6ED6A23525A6E00C29477 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80EA226A235179E500A366A1 /* crush */;
+			targetProxy = F2C6ED6923525A6E00C29477 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -658,50 +639,6 @@
 			};
 			name = Release;
 		};
-		80EA2299235179E600A366A1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0450AE7848C87431E539A17 /* Pods-crushTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = crushTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fuhu.crushTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crush.app/crush";
-			};
-			name = Debug;
-		};
-		80EA229A235179E600A366A1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA929A9BB2F349ACEFA39CB2 /* Pods-crushTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = crushTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = fuhu.crushTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crush.app/crush";
-			};
-			name = Release;
-		};
 		80EA229C235179E600A366A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6551F2EFAC4A9A794134F201 /* Pods-crush-crushUITests.debug.xcconfig */;
@@ -742,6 +679,48 @@
 			};
 			name = Release;
 		};
+		F2C6ED6C23525A6F00C29477 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5QL8SVZL7D;
+				INFOPLIST_FILE = crushTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CQCumbers.crushTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crush.app/crush";
+			};
+			name = Debug;
+		};
+		F2C6ED6D23525A6F00C29477 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5QL8SVZL7D;
+				INFOPLIST_FILE = crushTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.CQCumbers.crushTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crush.app/crush";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -763,20 +742,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80EA2298235179E600A366A1 /* Build configuration list for PBXNativeTarget "crushTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				80EA2299235179E600A366A1 /* Debug */,
-				80EA229A235179E600A366A1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		80EA229B235179E600A366A1 /* Build configuration list for PBXNativeTarget "crushUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80EA229C235179E600A366A1 /* Debug */,
 				80EA229D235179E600A366A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2C6ED6B23525A6F00C29477 /* Build configuration list for PBXNativeTarget "crushTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2C6ED6C23525A6F00C29477 /* Debug */,
+				F2C6ED6D23525A6F00C29477 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -14,32 +14,30 @@ struct ListView: View {
     var title: String
     
     var body: some View {
-            List(userData) { user in
-                HStack() {
-                    Image(uiImage: user.image)
-                        .resizable()
-                        .frame(width: 80, height: 80, alignment: .leading)
-                    VStack {
-                        Text(user.name).font(.title)
-                    }
-                    Spacer()
-                    NavigationLink(destination: ProfileView(user: user)) {
-                        Spacer()
-                        Text("View")
-                    }
-                    Spacer()
+        List(userData) { user in
+            HStack() {
+                Image(uiImage: user.image)
+                    .resizable()
+                    .frame(width: 80, height: 80, alignment: .leading)
+                VStack {
+                    Text(user.name).font(.title)
                 }
+                Spacer()
+                NavigationLink(destination: ProfileView(user: user)) {
+                    Spacer()
+                    Text("View")
+                }
+                Spacer()
             }
-            .navigationBarTitle(Text(title))
         }
+        .navigationBarTitle(Text(title))
     }
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(userData: [User(id: 0, name: "Foo",
-            description: "An interesting person", imageUrl: "https://i.imgur.com/RMJtEhQ.jpg")
-        ], title: "Nearby People")
+        let user = User(id: "0", name: "Foo", description: "An interesting person", imageUrl: "https://i.imgur.com/RMJtEhQ.jpg")
+        return ListView(userData: [user], title: "Nearby People")
     }
 }
 

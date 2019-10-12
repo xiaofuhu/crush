@@ -2,12 +2,11 @@
 //  crushTests.swift
 //  crushTests
 //
-//  Created by Fuhu Xiao on 10/11/19.
+//  Created by Alexander Zhang on 10/12/19.
 //  Copyright © 2019 Crush Inc. All rights reserved.
 //
 
 import XCTest
-@testable import crush
 
 class crushTests: XCTestCase {
 
@@ -26,7 +25,7 @@ class crushTests: XCTestCase {
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct User: Hashable, Codable, Identifiable {
-    var id: Int
+    var id: String
     var name: String
     var description: String
     var imageUrl: String

@@ -10,7 +10,7 @@ import SwiftUI
 import CoreLocation
 
 struct SnapshotView: View {
-    @ObservableObject var state: AppState
+    @ObservedObject var state: AppState
     
     var body: some View {
         ZStack {
@@ -19,7 +19,7 @@ struct SnapshotView: View {
             
             VStack {
                 Spacer()
-                Button(action: state.capture { state.screen = 2 }) {
+                Button(action: state.capture) {
                     HStack {
                         Image(systemName: "mappin.and.ellipse")
                         Text("Take Snapshot")
@@ -27,7 +27,7 @@ struct SnapshotView: View {
                     .padding()
                     .background(Color.white)
                     .cornerRadius(20.0)
-                    .shadow(radius: 5.0);
+                    .shadow(radius: 5.0)
                 }
             }
         }
@@ -36,6 +36,6 @@ struct SnapshotView: View {
 
 struct SnapshotView_Previews: PreviewProvider {
     static var previews: some View {
-        SnapshotView()
+        SnapshotView(state: AppState())
     }
 }

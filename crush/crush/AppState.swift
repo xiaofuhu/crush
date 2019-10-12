@@ -15,26 +15,23 @@ final class AppState: ObservableObject {
     @Published var manager = CLLocationManager()
     @Published var nearby: [User] = []
     @Published var liked: [User] = []
-    @Published var user = User(id: 0, name: "", description: "", imageUrl: "")
-    fileprivate var db: DatabaseReference!
-    fileprivate var gdb: GeoFire!
+    @Published var user = User(id: "0", name: "", description: "", imageUrl: "")
+    fileprivate var db = Database.database().reference()
+    fileprivate var gdb = GeoFire(firebaseRef: Database.database().reference())
 
-    func capture(closure: () -> Void) {
-        let location = manager.location.coordinate
-        var query = gdb.queryAtLocation(location, withRadius: 0.1)
-        query.observeEventType(.KeyEntered, withBlock: { key, _ in
-            guard (key != user.id) else { return }
-            getUser(key) { nearby.append(newElement: $0) }
+    func capture() {
+        let query = gdb.query(at: manager.location!, withRadius: 0.1)
+        query.observe(.keyEntered, with: { key, _ in
+            guard (key != self.user.id) else { return }
+            self.getUser(id: key) { self.nearby.append($0) }
         })
-        query.observeReadyWithBlock(closure)
     }
     
     func sendLocation() {
-        let location = manager.location.coordinate
-        gdb.setLocation(location, forKey: userId)
+        gdb.setLocation(manager.location!, forKey: user.id)
     }
     
-    func getUser(id: String, closure: (User) -> Void) {
+    func getUser(id: String, closure: @escaping (User) -> Void) {
         db.child("user").child(id).observeSingleEvent(of: .value, with: { snapshot in
             var user = User(id: id, name: "", description: "", imageUrl: "")
             let value = snapshot.value as? NSDictionary
