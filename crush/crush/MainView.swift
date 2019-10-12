@@ -10,10 +10,24 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var state: AppState
+    @State private var id: String = "1"
 
     var body: some View {
         TabView {
-            ProfileView(user: state.user).tabItem {
+            VStack {
+                ProfileView(user: state.user)
+                HStack {
+                    TextField("User ID", text: $id)
+                    Button(action: {
+                        self.state.getUser(id: self.id) { user in
+                            self.state.nearby.removeAll()
+                            self.state.user = user
+                        }
+                    }) {
+                        Text("Login")
+                    }
+                }
+            }.tabItem {
                 Image(systemName: "1.square.fill")
                 Text("First")
             }
@@ -31,6 +45,11 @@ struct MainView: View {
                 .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Matched")
+                }
+                ListView(userData: state.nearby, title: "Nearby", state: state)
+                .tabItem {
+                    Image(systemName: "globe")
+                    Text("Nearby")
                 }
             }.tabItem {
                 Image(systemName: "3.square.fill")
