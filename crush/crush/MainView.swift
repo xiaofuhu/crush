@@ -32,6 +32,11 @@ struct MainView: View {
                     Image(systemName: "heart.fill")
                     Text("Matched")
                 }
+                ListView(userData: state.nearby, title: "Nearby", state: state)
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Nearby")
+                }
             }.tabItem {
                 Image(systemName: "3.square.fill")
                 Text("Third")

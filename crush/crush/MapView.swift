@@ -25,6 +25,7 @@ struct MapView: UIViewRepresentable {
     
     final class Coordinator: NSObject, MKMapViewDelegate {
         var control: MapView
+        var circle: MKCircle?
 
         init(_ control: MapView) {
             self.control = control
@@ -35,7 +36,9 @@ struct MapView: UIViewRepresentable {
             let span = MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002)
             let region = MKCoordinateRegion(center: location, span: span)
             view.setRegion(region, animated: true)
-            view.addOverlay(MKCircle(center: location, radius: 100))
+            if let circle = circle { view.removeOverlay(circle) }
+            circle = MKCircle(center: location, radius: 100)
+            view.addOverlay(circle!)
         }
         
         func mapView(_ view: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
