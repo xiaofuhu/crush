@@ -23,7 +23,12 @@ struct MainView: View {
                     Image(systemName: "2.square.fill")
                     Text("Second")
                 }
-            Text("The Last Tab")
+            TabView() {
+                ListView(userData: [User(id: 1, name: "AS", description: "DF", imageUrl: "https://i.imgur.com/FpYM3fM.jpg")], title: "Liked by")
+                .tabItem {
+                    Image(systemName: "star.fill")
+                }
+            }
                 .tabItem {
                     Image(systemName: "3.square.fill")
                     Text("Third")

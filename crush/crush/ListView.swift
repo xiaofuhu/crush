@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ListView: View {
     var userData: [User]
@@ -16,14 +17,21 @@ struct ListView: View {
             List(userData) { user in
                 HStack() {
                     Image(uiImage: user.image)
+                        .resizable()
+                        .frame(width: 80, height: 80, alignment: .leading)
                     VStack {
                         Text(user.name).font(.title)
-                        Text(user.description).font(.subheadline)
+                    }
+                    Spacer()
+                    NavigationLink(destination: ProfileView(user: user)) {
+                        Spacer()
+                        Text("View")
                     }
                     Spacer()
                 }
             }
             .navigationBarTitle(Text(title))
+        }
     }
 }
 
@@ -34,3 +42,4 @@ struct ListView_Previews: PreviewProvider {
         ], title: "Nearby People")
     }
 }
+
