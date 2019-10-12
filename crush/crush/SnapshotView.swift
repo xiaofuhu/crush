@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SnapshotView: View {
+struct ContentView: View {
     var body: some View {
         ZStack {
             MapView().edgesIgnoringSafeArea(.vertical)
@@ -22,7 +22,7 @@ struct SnapshotView: View {
                     }
                     .padding()
                     .background(Color.white)
-                    .cornerRadius(10.0)
+                    .cornerRadius(20.0)
                     .shadow(radius: 5.0);
                 }
             }
@@ -30,8 +30,8 @@ struct SnapshotView: View {
     }
 }
 
-struct SnapshotView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SnapshotView()
+        ContentView()
     }
 }

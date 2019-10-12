@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         ref = Database.database().reference()
-        ref.updateChildValues(["John":0])
         return true
     }
 
