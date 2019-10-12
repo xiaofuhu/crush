@@ -24,7 +24,7 @@ final class AppState: ObservableObject {
         self.nearby.removeAll()
         let query = gdb.query(at: manager.location!, withRadius: 0.1)
         query.observe(.keyEntered, with: { key, _ in
-            //guard (key != self.user.id) else { return }
+            // guard (key != self.user.id) else { return }
             self.getUser(id: key) { self.nearby.append($0) }
         })
     }
@@ -42,6 +42,7 @@ final class AppState: ObservableObject {
             user.description = value?["description"] as? String ?? ""
             user.imageUrl = value?["image"] as? String ?? ""
             closure(user)
+            print(user.id)
         })
     }
     
