@@ -28,7 +28,7 @@ struct SnapshotView: View {
                     .background(Color.white)
                     .cornerRadius(20.0)
                     .shadow(radius: 5.0)
-                }
+                }.padding()
             }
         }
     }

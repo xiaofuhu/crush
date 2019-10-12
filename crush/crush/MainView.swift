@@ -28,12 +28,10 @@ struct MainView: View {
                     }
                 }
             }.tabItem {
-                Image(systemName: "1.square.fill")
-                Text("First")
+                Image(systemName: "person.crop.square.fill")
             }
             SnapshotView(state: state).tabItem {
-                Image(systemName: "2.square.fill")
-                Text("Second")
+                Image(systemName: "map.fill")
             }
             TabView {
                 ListView(userData: state.liked, title: "Liked by", state: state)
@@ -52,10 +50,9 @@ struct MainView: View {
                     Text("Nearby")
                 }
             }.tabItem {
-                Image(systemName: "3.square.fill")
-                Text("Third")
+                Image(systemName: "list.dash")
             }
-        }
+        }.imageScale(.large)
     }
 }
 
