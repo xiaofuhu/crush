@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 
 struct ProfileView: View {
-    @State var user: User
+    var user: User
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
@@ -28,6 +28,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(user: User(id: 1, name: "AS", description: "DF", imageUrl: "foo"))
+        ProfileView(user: )
     }
 }

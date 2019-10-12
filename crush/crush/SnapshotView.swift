@@ -7,15 +7,19 @@
 //
 
 import SwiftUI
+import CoreLocation
 
-struct ContentView: View {
+struct SnapshotView: View {
+    @ObservableObject var state: AppState
+    
     var body: some View {
         ZStack {
-            MapView().edgesIgnoringSafeArea(.vertical)
+            MapView(manager: state.manager)
+                .edgesIgnoringSafeArea(.vertical)
             
             VStack {
                 Spacer()
-                Button(action: { print("snapshot tap") }) {
+                Button(action: state.capture { state.screen = 2 }) {
                     HStack {
                         Image(systemName: "mappin.and.ellipse")
                         Text("Take Snapshot")
@@ -30,8 +34,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SnapshotView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SnapshotView()
     }
 }

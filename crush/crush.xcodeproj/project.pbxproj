@@ -19,8 +19,6 @@
 		80EA2286235179E600A366A1 /* crushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2285235179E600A366A1 /* crushTests.swift */; };
 		80EA2291235179E600A366A1 /* crushUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA2290235179E600A366A1 /* crushUITests.swift */; };
 		80EA22A123517B8000A366A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80EA22A023517B8000A366A1 /* GoogleService-Info.plist */; };
-		F230A87E23518D4D0072389B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230A87D23518D4C0072389B /* MapView.swift */; };
-		F230A8822351E3570072389B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230A8812351E3570072389B /* ListView.swift */; };
 		80EA726223518F7400BADD27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726123518F7400BADD27 /* MainView.swift */; };
 		80EA726323518F7400BADD27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726123518F7400BADD27 /* MainView.swift */; };
 		80EA726423518F7400BADD27 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726123518F7400BADD27 /* MainView.swift */; };
@@ -30,6 +28,9 @@
 		80EA72702351EEDD00BADD27 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726F2351EEDD00BADD27 /* User.swift */; };
 		80EA72712351EEDD00BADD27 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726F2351EEDD00BADD27 /* User.swift */; };
 		80EA72722351EEDD00BADD27 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EA726F2351EEDD00BADD27 /* User.swift */; };
+		F230A87E23518D4D0072389B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230A87D23518D4C0072389B /* MapView.swift */; };
+		F230A8822351E3570072389B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F230A8812351E3570072389B /* ListView.swift */; };
+		F2C6ED5F23522B4300C29477 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6ED5E23522B4300C29477 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +78,8 @@
 		A0450AE7848C87431E539A17 /* Pods-crushTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crushTests.debug.xcconfig"; path = "Target Support Files/Pods-crushTests/Pods-crushTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA929A9BB2F349ACEFA39CB2 /* Pods-crushTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crushTests.release.xcconfig"; path = "Target Support Files/Pods-crushTests/Pods-crushTests.release.xcconfig"; sourceTree = "<group>"; };
 		F230A87D23518D4C0072389B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		F230A87F2351BFF70072389B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F230A8812351E3570072389B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		F2C6ED5E23522B4300C29477 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		FB077B40EB91C6419F98109E /* Pods_crushTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crushTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -158,14 +159,15 @@
 		80EA226D235179E500A366A1 /* crush */ = {
 			isa = PBXGroup;
 			children = (
-				80EA2272235179E500A366A1 /* SnapshotView.swift */,
-				F230A8812351E3570072389B /* ListView.swift */,
-				F230A87D23518D4C0072389B /* MapView.swift */,
+				F2C6ED5E23522B4300C29477 /* AppState.swift */,
+				80EA726F2351EEDD00BADD27 /* User.swift */,
 				80EA226E235179E500A366A1 /* AppDelegate.swift */,
+				80EA2270235179E500A366A1 /* SceneDelegate.swift */,
 				80EA726123518F7400BADD27 /* MainView.swift */,
 				80EA726B2351A34600BADD27 /* ProfileView.swift */,
-				80EA2270235179E500A366A1 /* SceneDelegate.swift */,
-				80EA726F2351EEDD00BADD27 /* User.swift */,
+				80EA2272235179E500A366A1 /* SnapshotView.swift */,
+				F230A87D23518D4C0072389B /* MapView.swift */,
+				F230A8812351E3570072389B /* ListView.swift */,
 				80EA22A023517B8000A366A1 /* GoogleService-Info.plist */,
 				80EA2274235179E600A366A1 /* Assets.xcassets */,
 				80EA2279235179E600A366A1 /* LaunchScreen.storyboard */,
@@ -447,8 +449,8 @@
 				F230A8822351E3570072389B /* ListView.swift in Sources */,
 				80EA72702351EEDD00BADD27 /* User.swift in Sources */,
 				80EA726C2351A34600BADD27 /* ProfileView.swift in Sources */,
+				F2C6ED5F23522B4300C29477 /* AppState.swift in Sources */,
 				80EA2271235179E500A366A1 /* SceneDelegate.swift in Sources */,
-				F230A8802351BFF70072389B /* User.swift in Sources */,
 				80EA2273235179E500A366A1 /* SnapshotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

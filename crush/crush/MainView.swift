@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var user: User
-    
+    @ObservableObject var state: AppState
+
     var body: some View {
         TabView {
             ProfileView(user: user)

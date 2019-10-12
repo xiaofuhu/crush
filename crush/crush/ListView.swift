@@ -10,26 +10,27 @@ import SwiftUI
 
 struct ListView: View {
     var userData: [User]
+    var title: String
     
     var body: some View {
-        NavigationView {
             List(userData) { user in
-                HStack {
+                HStack() {
                     Image(uiImage: user.image)
                     VStack {
                         Text(user.name).font(.title)
                         Text(user.description).font(.subheadline)
                     }
+                    Spacer()
                 }
             }
-            .navigationBarTitle(Text("People"))
-        }
+            .navigationBarTitle(Text(title))
     }
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(userData: [
-            User(id: 0, name: "Foo", description: "An interesting person", imageUrl: "foo")])
+        ListView(userData: [User(id: 0, name: "Foo",
+            description: "An interesting person", imageUrl: "https://i.imgur.com/RMJtEhQ.jpg")
+        ], title: "Nearby People")
     }
 }
