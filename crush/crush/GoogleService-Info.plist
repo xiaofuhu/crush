@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>261330779993-ihcanbvb4qvn3g542oufi4pe01m5k25j.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.261330779993-ihcanbvb4qvn3g542oufi4pe01m5k25j</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDkrHMjKwAPGBz_neqg6AdGv6Ox0wMHaS8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>261330779993</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>fuhu.crush</string>
+	<key>PROJECT_ID</key>
+	<string>crush-8888</string>
+	<key>STORAGE_BUCKET</key>
+	<string>crush-8888.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:261330779993:ios:89b5ef2518c008e9b61648</string>
+	<key>DATABASE_URL</key>
+	<string>https://crush-8888.firebaseio.com</string>
+</dict>
+</plist>
