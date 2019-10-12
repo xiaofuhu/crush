@@ -18,7 +18,7 @@ struct User: Hashable, Codable, Identifiable {
 extension User {
     var image: UIImage {
         let url = URL(string: imageUrl)
-        let data = try? Data(contentsOf: url!)
-        return UIImage(data: data!)!
+        let data = try! Data(contentsOf: url!)
+        return UIImage(data: data)!
     }
 }

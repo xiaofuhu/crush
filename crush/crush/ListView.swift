@@ -15,7 +15,7 @@ struct ListView: View {
         NavigationView {
             List(userData) { user in
                 HStack {
-                    Image(systemName: user.image)
+                    Image(uiImage: user.image)
                     VStack {
                         Text(user.name).font(.title)
                         Text(user.description).font(.subheadline)
@@ -30,6 +30,6 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         ListView(userData: [
-            User(id: 0, name: "Foo", description: "An interesting person", image: "person.crop.circle")])
+            User(id: 0, name: "Foo", description: "An interesting person", imageUrl: "foo")])
     }
 }

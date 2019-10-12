@@ -165,11 +165,7 @@
 				80EA726123518F7400BADD27 /* MainView.swift */,
 				80EA726B2351A34600BADD27 /* ProfileView.swift */,
 				80EA2270235179E500A366A1 /* SceneDelegate.swift */,
-<<<<<<< HEAD
-				F230A87F2351BFF70072389B /* User.swift */,
-=======
 				80EA726F2351EEDD00BADD27 /* User.swift */,
->>>>>>> 576c1fe466705f80edd2a1d0d03d330c45ff53c2
 				80EA22A023517B8000A366A1 /* GoogleService-Info.plist */,
 				80EA2274235179E600A366A1 /* Assets.xcassets */,
 				80EA2279235179E600A366A1 /* LaunchScreen.storyboard */,
@@ -447,13 +443,10 @@
 			files = (
 				80EA726223518F7400BADD27 /* MainView.swift in Sources */,
 				80EA226F235179E500A366A1 /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
 				F230A87E23518D4D0072389B /* MapView.swift in Sources */,
 				F230A8822351E3570072389B /* ListView.swift in Sources */,
-=======
 				80EA72702351EEDD00BADD27 /* User.swift in Sources */,
 				80EA726C2351A34600BADD27 /* ProfileView.swift in Sources */,
->>>>>>> 576c1fe466705f80edd2a1d0d03d330c45ff53c2
 				80EA2271235179E500A366A1 /* SceneDelegate.swift in Sources */,
 				F230A8802351BFF70072389B /* User.swift in Sources */,
 				80EA2273235179E500A366A1 /* SnapshotView.swift in Sources */,
