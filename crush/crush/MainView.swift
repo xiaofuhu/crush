@@ -13,11 +13,12 @@ struct MainView: View {
     @State private var id: String = "1"
 
     var body: some View {
-        TabView {
+        TabView(selection: $state.selectedView) {
             VStack {
                 ProfileView(user: state.user)
                 HStack {
                     TextField("User ID", text: $id)
+                       .textFieldStyle(RoundedBorderTextFieldStyle())
                     Button(action: {
                         self.state.getUser(id: self.id) { user in
                             self.state.nearby.removeAll()
@@ -29,30 +30,32 @@ struct MainView: View {
                 }
             }.tabItem {
                 Image(systemName: "person.crop.square.fill")
-            }
+            }.tag(0).padding()
             SnapshotView(state: state).tabItem {
                 Image(systemName: "map.fill")
-            }
-            TabView {
+            }.tag(1)
+            TabView(selection: $state.selectedView2) {
                 ListView(userData: state.liked, title: "Liked by", state: state)
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("Liked by")
-                }
+                }.tag(0)
                 MatchListView(userData: state.matched, title: "Matched", state: state)
                 .tabItem {
                     Image(systemName: "heart.fill")
                     Text("Matched")
-                }
+                }.tag(1)
                 NearbyListView(userData: state.nearby, title: "Nearby", state: state)
                 .tabItem {
                     Image(systemName: "globe")
                     Text("Nearby")
-                }
+                }.tag(2)
             }.tabItem {
                 Image(systemName: "list.dash")
-            }
-        }.imageScale(.large)
+            }.tag(2)
+        }
+        .imageScale(.large)
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

@@ -53,6 +53,7 @@ struct MapView: UIViewRepresentable {
     
     func updateUIView(_ view: MKMapView, context: Context) {
         view.showsUserLocation = true
+        view.showsCompass = true
         manager.requestAlwaysAuthorization()
         manager.requestWhenInUseAuthorization()
     }

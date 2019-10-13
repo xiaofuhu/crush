@@ -14,9 +14,11 @@ import GeoFire
 final class AppState: ObservableObject {
     @Published var manager = CLLocationManager()
     @Published var nearby: [User] = []
-    @Published var liked: [User] = [User(id: "3", name: "Laura", description: "I love math", imageUrl: "https://i.imgur.com/s0dmtAE.jpg")]
+    @Published var liked: [User] = []
     @Published var matched: [User] = []
     @Published var user = User(id: "1", name: "", description: "", imageUrl: "")
+    @Published var selectedView = 1
+    @Published var selectedView2 = 0
     fileprivate var db = Database.database().reference()
     fileprivate var gdb = GeoFire(firebaseRef: Database.database().reference())
 
@@ -24,9 +26,13 @@ final class AppState: ObservableObject {
         self.nearby.removeAll()
         let query = gdb.query(at: manager.location!, withRadius: 0.1)
         query.observe(.keyEntered, with: { key, _ in
-            // guard (key != self.user.id) else { return }
+            guard (key != self.user.id) else { return }
             self.getUser(id: key) { self.nearby.append($0) }
         })
+        query.observeReady {
+            self.selectedView = 2
+            self.selectedView2 = 2
+        }
     }
     
     func sendLocation() {
@@ -35,48 +41,29 @@ final class AppState: ObservableObject {
     }
     
     func getUser(id: String, closure: @escaping (User) -> Void) {
-        db.child("user").child(id).observeSingleEvent(of: .value, with: { snapshot in
+        db.child("user").child(id).observeSingleEvent(of: .value, with: { result in
             var user = User(id: id, name: "", description: "", imageUrl: "")
-            let value = snapshot.value as? NSDictionary
+            let value = result.value as? NSDictionary
             user.name = value?["name"] as? String ?? ""
             user.description = value?["description"] as? String ?? ""
             user.imageUrl = value?["image"] as? String ?? ""
             closure(user)
-            print(user.id)
         })
     }
     
     func like_back(id: String) {
-        db.child("user").child(id).child("match_list").child(user.id).setValue(1)
+        guard (matched.allSatisfy { $0.id != user.id }) else { return }
+        db.child("user").child(id).child("match_list").child(user.id).setValue(1) {
+            self.getUser(id: id) { self.matched.append($0) } // avoid dupl when appending
+            self.liked.removeAll { $0.id == id }
+        }
         db.child("user").child(user.id).child("match_list").child(id).setValue(1)
-        db.child("user").child(id).observeSingleEvent(of: .value, with: { snapshot in
-            var tmp = User(id: id, name: "", description: "", imageUrl: "")
-            var i:Int = self.liked.startIndex;
-            while (i < self.liked.endIndex) {
-                if (self.liked[i].id == id) {
-                    self.liked.remove(at: i)
-                    break
-                }
-                i = i + 1
-            }
-            let value = snapshot.value as? NSDictionary
-            tmp.name = value?["name"] as? String ?? ""
-            tmp.description = value?["description"] as? String ?? ""
-            tmp.imageUrl = value?["image"] as? String ?? ""
-            self.matched.append(tmp)
-        })
     }
     
     func like(id: String) {
-        db.child("user").child(id).observeSingleEvent(of: .value, with: { snapshot in
-            var i:Int = self.nearby.startIndex;
-            while (i < self.nearby.endIndex) {
-                if (self.nearby[i].id == id) {
-                    self.nearby.remove(at: i)
-                    break
-                }
-                i = i + 1
-            }
+        db.child("user").child(id).child("match_list").child(user.id).setValue(1)
+        db.child("user").child(id).observeSingleEvent(of: .value, with: { result in
+            self.nearby.removeAll { $0.id == id }
         })
     }
 }
