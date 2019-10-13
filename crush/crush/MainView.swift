@@ -23,6 +23,8 @@ struct MainView: View {
                         self.state.getUser(id: self.id) { user in
                             self.state.nearby.removeAll()
                             self.state.user = user
+                            self.state.manager.stopUpdatingLocation()
+                            self.state.manager.startUpdatingLocation()
                         }
                     }) {
                         Text("Login")

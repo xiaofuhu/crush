@@ -28,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, CLLocationManagerDelega
         // Initialize state object
         state.manager.delegate = self
         state.manager.startUpdatingLocation()
+        state.manager.desiredAccuracy = kCLLocationAccuracyBest;
         state.getUser(id: "1") { user in
             self.state.user = user
             
