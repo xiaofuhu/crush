@@ -31,6 +31,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, CLLocationManagerDelega
         state.getUser(id: "1") { user in
             self.state.user = user
             
+            // load data
+            let db = Database.database().reference()
+            db.child("user").child(self.state.user.id).child("like_list").observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as! NSArray
+                for i in value {
+                    self.state.getUser(id: String(describing: i)) { user in
+                        self.state.liked.append(user)
+                    }
+                }
+            })
+            db.child("user").child(self.state.user.id).child("match_list").observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as! NSArray
+                for i in value {
+                    self.state.getUser(id: String(describing: i)) { user in
+                        self.state.matched.append(user)
+                    }
+                }
+            })
+            
+            
             // Create the SwiftUI view that provides the window contents.
             if let windowScene = scene as? UIWindowScene {
                 let window = UIWindow(windowScene: windowScene)

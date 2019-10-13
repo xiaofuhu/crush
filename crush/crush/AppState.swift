@@ -53,18 +53,40 @@ final class AppState: ObservableObject {
     
     func like_back(id: String) {
         guard (matched.allSatisfy { $0.id != user.id }) else { return }
-        db.child("user").child(id).child("match_list").child(user.id).setValue(1) {
-            self.getUser(id: id) { self.matched.append($0) } // avoid dupl when appending
+        db.child("user").child(id).child("match_list").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as! NSArray
+            value.adding(NSNumber(value: Int(self.user.id)!)) // main user to other user
+            self.db.child("user").child(id).child("match_list").setValue(value)
+            self.getUser(id: id) { self.matched.append($0) }
             self.liked.removeAll { $0.id == id }
-        }
-        db.child("user").child(user.id).child("match_list").child(id).setValue(1)
+        })
+        db.child("user").child(user.id).child("match_list").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as! NSArray
+            value.adding(NSNumber(value: Int(id)!)) // other user to main user
+            self.db.child("user").child(self.user.id).child("match_list").setValue(value)
+        })
     }
     
     func like(id: String) {
-        db.child("user").child(id).child("match_list").child(user.id).setValue(1)
+        db.child("user").child(id).child("match_list").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as! NSArray
+            value.adding(NSNumber(value: Int(self.user.id)!))
+            self.db.child("user").child(id).child("match_list").setValue(value)
+        })
         db.child("user").child(id).observeSingleEvent(of: .value, with: { result in
             self.nearby.removeAll { $0.id == id }
+            
         })
+
+//        db.child("user").child(id).child("like_list").observeSingleEvent(of: .value, with: { (snapshot) in
+//            let value = snapshot.value as! NSArray
+//            value.adding(id)
+//            self.db.child("user").child(id).child("like_list").setValue(value)
+//        })
+////        db.child("user").child(id).child("like_list").child(user.id).setValue(1)
+//        db.child("user").child(id).observeSingleEvent(of: .value, with: { result in
+//            self.nearby.removeAll { $0.id == id }
+//        })
     }
 }
 
